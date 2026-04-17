@@ -7,8 +7,9 @@ export function BilingualShowcase() {
 
   return (
     <section
+      id="language"
       aria-labelledby="bilingual-title"
-      className="relative bg-[color:var(--color-ink)] text-[color:var(--color-paper)] py-32 md:py-48 overflow-hidden"
+      className="relative bg-[color:var(--color-ink)] text-[color:var(--color-paper)] py-32 md:py-48 overflow-hidden scroll-mt-24"
     >
       {/* Vertical editorial notation */}
       <div

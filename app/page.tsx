@@ -19,11 +19,11 @@ export default function Page() {
       <main>
         <Hero />
         <TrustStrip />
-        <HowItWorks />
-        <InTheHand />
-        <SafetyFirst />
-        <BilingualShowcase />
         <AppShowcase />
+        {/* <HowItWorks /> */}
+        {/* <InTheHand /> */}
+        {/* <SafetyFirst /> */}
+        <BilingualShowcase />
         <FeatureGrid />
         <Testimonials />
         <CTAFooter />

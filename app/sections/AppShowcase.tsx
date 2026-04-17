@@ -17,8 +17,9 @@ export function AppShowcase() {
 
   return (
     <section
+      id="showcase"
       aria-labelledby="showcase-title"
-      className="relative bg-[color:var(--color-paper)] text-[color:var(--color-ink)] py-28 md:py-40 overflow-hidden"
+      className="relative bg-[color:var(--color-paper)] text-[color:var(--color-ink)] py-28 md:py-40 overflow-hidden scroll-mt-24"
     >
       {/* Decorative typographic bleed in background */}
       <div
