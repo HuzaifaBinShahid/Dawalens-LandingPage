@@ -147,3 +147,17 @@ The landing page is a fresh marketing site and does not share components with th
 ## Status
 
 Pre-launch beta. The primary CTA is **"Try the beta"** backed by an Expo QR code — no Play Store / App Store links yet.
+
+---
+
+## Repository
+
+Source is hosted on GitHub. Clone, open an issue, or send a pull request:
+
+```bash
+git clone https://github.com/<your-org>/dawalens-landing.git
+cd "dawalens-landing"
+npm install && npm run dev
+```
+
+Replace `<your-org>` with the GitHub owner once the remote is connected (`git remote add origin ...`).

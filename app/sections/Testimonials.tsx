@@ -35,8 +35,9 @@ export function Testimonials() {
 
   return (
     <section
+      id="voices"
       aria-labelledby="voices-title"
-      className="relative bg-[color:var(--color-primary-tint)] text-[color:var(--color-ink)] py-28 md:py-40 overflow-hidden"
+      className="relative bg-[color:var(--color-primary-tint)] text-[color:var(--color-ink)] py-28 md:py-40 overflow-hidden scroll-mt-24"
     >
       <div className="relative mx-auto max-w-[1200px] px-8 md:px-14">
         <div className="flex items-center gap-4 mb-10 text-[11px] tracking-[0.24em] uppercase text-[color:var(--color-primary)]">
