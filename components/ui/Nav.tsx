@@ -21,10 +21,10 @@ export function Nav() {
       </Link>
 
       <ul className="hidden md:flex items-center gap-10 text-[12px] tracking-[0.18em] uppercase">
-        <li><a href="#showcase" className="hover:text-[color:var(--color-accent)] transition-colors">Inside</a></li>
-        <li><a href="#language" className="hover:text-[color:var(--color-accent)] transition-colors">Language</a></li>
-        <li><a href="#features" className="hover:text-[color:var(--color-accent)] transition-colors">Features</a></li>
-        <li><a href="#voices" className="hover:text-[color:var(--color-accent)] transition-colors">Voices</a></li>
+        {/* <li><a href="#showcase" className="hover:text-[color:var(--color-accent)] transition-colors">Inside</a></li> */}
+        {/* <li><a href="#language" className="hover:text-[color:var(--color-accent)] transition-colors">Language</a></li> */}
+        {/* <li><a href="#features" className="hover:text-[color:var(--color-accent)] transition-colors">Features</a></li> */}
+        {/* <li><a href="#voices" className="hover:text-[color:var(--color-accent)] transition-colors">Voices</a></li> */}
       </ul>
 
       <a
