@@ -23,9 +23,9 @@ export default function Page() {
         {/* <HowItWorks /> */}
         {/* <InTheHand /> */}
         {/* <SafetyFirst /> */}
-        <BilingualShowcase />
-        <FeatureGrid />
-        <Testimonials />
+        {/* <BilingualShowcase /> */}
+        {/* <FeatureGrid /> */}
+        {/* <Testimonials /> */}
         <CTAFooter />
       </main>
     </>
