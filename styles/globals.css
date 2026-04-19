@@ -4,14 +4,22 @@
   /* Editorial Clinical palette — DawaLens */
   --color-ink: #0a0e1a;
   --color-ink-soft: #141826;
-  --color-primary: #0160b8;
-  --color-primary-dark: #014a8f;
-  --color-primary-tint: #e5eff8;
-  --color-accent: #ea580c;
-  --color-accent-soft: #fff1e8;
+  --color-deep: #005fb8;
+  --color-deep-dark: #00498e;
+  --color-primary: #005fb8;
+  --color-primary-dark: #00498e;
+  --color-primary-tint: #e3eefa;
+  /* `--color-accent` now carries the paper/white role on blue backgrounds.
+     On paper sections we point italics and highlights at `--color-primary` directly.
+     Orange has been fully removed from the palette. */
+  --color-accent: #ffffff;
+  --color-accent-soft: #e3eefa;
   --color-paper: #f8fafc;
-  --color-bone: #eee7dc;
-  --color-bone-deep: #d9cfbd;
+  /* Soft blue-tinted off-white — used as the hero background. Reads as
+     "light white with a touch of the brand blue," not clinical pure white. */
+  --color-hero-bg: #e9eff7;
+  --color-bone: #eef2f7;
+  --color-bone-deep: #cfd8e3;
   --color-success: #16a34a;
   --color-danger: #dc2626;
   --color-slate: #475569;

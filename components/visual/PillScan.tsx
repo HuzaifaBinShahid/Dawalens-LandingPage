@@ -16,7 +16,7 @@ export function PillScan() {
       className="w-full h-auto"
     >
       {/* Outer scan frame corners */}
-      <g stroke="var(--color-accent)" strokeWidth="2.5" strokeLinecap="square">
+      <g stroke="var(--color-primary)" strokeWidth="2.5" strokeLinecap="square">
         {[
           "M60 100 L60 60 L100 60",
           "M420 60 L460 60 L460 100",
@@ -43,7 +43,7 @@ export function PillScan() {
         x2="440"
         y1="260"
         y2="260"
-        stroke="var(--color-accent)"
+        stroke="var(--color-primary)"
         strokeWidth="1"
         strokeDasharray="6 6"
         initial={{ y1: 80, y2: 80, opacity: 0 }}
@@ -61,49 +61,55 @@ export function PillScan() {
         }}
       />
 
-      {/* Pill capsule — two halves */}
-      <g>
-        <motion.rect
-          x="170"
-          y="225"
-          width="90"
-          height="70"
-          rx="35"
+      {/* Real medicine packaging inside the scan frame — clipped to a rounded
+          rect, with a subtle blue wash for brand consistency and a thin
+          primary border so the photo feels framed by the scanner. */}
+      <defs>
+        <clipPath id="pill-scan-photo-clip">
+          <rect x="130" y="170" width="260" height="180" rx="10" />
+        </clipPath>
+      </defs>
+      <motion.g
+        clipPath="url(#pill-scan-photo-clip)"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: d(0.8), delay: d(0.55) }}
+      >
+        <image
+          href="https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=700&q=80"
+          x="130"
+          y="170"
+          width="260"
+          height="180"
+          preserveAspectRatio="xMidYMid slice"
+        />
+        {/* Brand wash so the photo sits inside the clinical blue palette */}
+        <rect
+          x="130"
+          y="170"
+          width="260"
+          height="180"
           fill="var(--color-primary)"
-          initial={{ x: 130, opacity: 0 }}
-          animate={{ x: 170, opacity: 1 }}
-          transition={{ duration: d(0.9), delay: d(0.6), ease: [0.22, 1, 0.36, 1] }}
+          opacity="0.18"
         />
-        <motion.rect
-          x="260"
-          y="225"
-          width="90"
-          height="70"
-          rx="35"
-          fill="var(--color-primary-tint)"
-          stroke="var(--color-primary)"
-          strokeWidth="1.5"
-          initial={{ x: 300, opacity: 0 }}
-          animate={{ x: 260, opacity: 1 }}
-          transition={{ duration: d(0.9), delay: d(0.7), ease: [0.22, 1, 0.36, 1] }}
-        />
-        {/* Seam */}
-        <motion.line
-          x1="260"
-          x2="260"
-          y1="225"
-          y2="295"
-          stroke="var(--color-ink)"
-          strokeOpacity="0.25"
-          strokeWidth="1"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.25 }}
-          transition={{ duration: d(0.4), delay: d(1.4) }}
-        />
-      </g>
+      </motion.g>
+      <motion.rect
+        x="130"
+        y="170"
+        width="260"
+        height="180"
+        rx="10"
+        fill="none"
+        stroke="var(--color-primary)"
+        strokeOpacity="0.35"
+        strokeWidth="1"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: d(0.4), delay: d(0.9) }}
+      />
 
       {/* Data pull-out lines — editorial */}
-      <g stroke="var(--color-paper)" strokeOpacity="0.4" strokeWidth="1">
+      <g stroke="var(--color-primary)" strokeOpacity="0.45" strokeWidth="1">
         {[
           { x1: 170, y1: 260, x2: 110, y2: 150, label: "Dosage" },
           { x1: 350, y1: 260, x2: 410, y2: 150, label: "Interactions" },
@@ -123,7 +129,7 @@ export function PillScan() {
               cx={ln.x2}
               cy={ln.y2}
               r="3"
-              fill="var(--color-accent)"
+              fill="var(--color-primary)"
               stroke="none"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -133,11 +139,13 @@ export function PillScan() {
         ))}
       </g>
 
-      {/* Label dots for data pull-outs */}
-      <g fill="var(--color-paper)" opacity="0.85" style={{ fontFamily: "var(--font-body)", fontSize: 11, letterSpacing: "0.14em" }}>
+      {/* Label dots for data pull-outs. Anchors are oriented so the text
+          extends AWAY from the image (left label ends at its dot, right label
+          starts at its dot), leaving a clean gap between glyphs and photo. */}
+      <g fill="var(--color-primary)" opacity="0.9" style={{ fontFamily: "var(--font-body)", fontSize: 11, letterSpacing: "0.14em" }}>
         {[
-          { x: 110, y: 138, t: "DOSAGE" },
-          { x: 410, y: 138, t: "INTERACTIONS", anchor: "end" as const },
+          { x: 102, y: 138, t: "DOSAGE", anchor: "end" as const },
+          { x: 418, y: 138, t: "INTERACTIONS", anchor: "start" as const },
           { x: 260, y: 442, t: "SAFETY", anchor: "middle" as const },
         ].map((l, i) => (
           <motion.text
@@ -154,16 +162,6 @@ export function PillScan() {
         ))}
       </g>
 
-      {/* Orange punctuation dot — the skill's "single sharp accent" */}
-      <motion.circle
-        cx="470"
-        cy="50"
-        r="4"
-        fill="var(--color-accent)"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: d(0.3), delay: d(0.1) }}
-      />
     </svg>
   );
 }
