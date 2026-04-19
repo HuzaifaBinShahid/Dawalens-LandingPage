@@ -5,33 +5,30 @@ export function Nav() {
   return (
     <nav
       aria-label="Primary"
-      className="absolute top-0 left-0 right-0 z-50 px-8 md:px-14 py-7 flex items-center justify-between text-[color:var(--color-paper)]"
+      className="absolute top-0 left-0 right-0 z-50 px-8 md:px-14 py-7 flex items-center justify-between text-[color:var(--color-primary)]"
     >
       <Link href="/" className="flex items-baseline gap-2 group">
         <span
           className="text-xl tracking-tight"
           style={{ fontFamily: "var(--font-display)", fontWeight: 600, fontVariationSettings: '"opsz" 36, "SOFT" 50' }}
         >
-          Dawa<span className="text-[color:var(--color-accent)]">Lens</span>
+          Dawa<span className="text-[color:var(--color-primary-dark)]">Lens</span>
         </span>
         <NastaliqMark
           text="دوا"
-          className="text-sm opacity-60 group-hover:opacity-100 transition-opacity"
+          className="text-sm opacity-70 group-hover:opacity-100 transition-opacity"
         />
       </Link>
 
       <ul className="hidden md:flex items-center gap-10 text-[12px] tracking-[0.18em] uppercase">
-        <li><a href="#showcase" className="hover:text-[color:var(--color-accent)] transition-colors">Inside</a></li>
-        <li><a href="#language" className="hover:text-[color:var(--color-accent)] transition-colors">Language</a></li>
-        <li><a href="#features" className="hover:text-[color:var(--color-accent)] transition-colors">Features</a></li>
-        <li><a href="#voices" className="hover:text-[color:var(--color-accent)] transition-colors">Voices</a></li>
+        {/* Nav links intentionally hidden for now. */}
       </ul>
 
       <a
-        href="#beta"
-        className="text-[12px] tracking-[0.18em] uppercase border border-[color:var(--color-paper)]/30 px-4 py-2 hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)] transition-colors"
+        href="#waitlist"
+        className="text-[12px] tracking-[0.18em] uppercase border border-[color:var(--color-primary)]/40 text-[color:var(--color-primary)] px-4 py-2 hover:bg-[color:var(--color-primary)] hover:text-[color:var(--color-paper)] hover:border-[color:var(--color-primary)] transition-colors"
       >
-        Try the beta
+        Join waitlist
       </a>
     </nav>
   );

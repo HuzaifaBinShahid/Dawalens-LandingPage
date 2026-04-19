@@ -1,15 +1,45 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { Reveal } from "@/components/motion/Reveal";
 import { PhoneFrame } from "@/components/visual/PhoneFrame";
-import { ScanScreen, DetailScreen, SafetyScreen } from "@/components/visual/AppScreens";
 import { NastaliqMark } from "@/components/visual/NastaliqMark";
 
 const phones = [
-  { label: "Scan", urdu: "تصویر", fig: "A", Screen: ScanScreen, tilt: -4, scale: 0.88, offsetY: 32 },
-  { label: "Identify", urdu: "شناخت", fig: "B", Screen: DetailScreen, tilt: 0, scale: 1, offsetY: 0 },
-  { label: "Safety", urdu: "آگاہی", fig: "C", Screen: SafetyScreen, tilt: 4, scale: 0.88, offsetY: 32 },
+  {
+    label: "Scan",
+    urdu: "تصویر",
+    fig: "A",
+    src: "/assets/screen-scan.jpeg",
+    alt: "DawaLens scan viewport detecting medicine packaging",
+    tilt: -4,
+    scale: 0.88,
+    offsetY: 32,
+    priority: false,
+  },
+  {
+    label: "Identify",
+    urdu: "شناخت",
+    fig: "B",
+    src: "/assets/screen-search.jpeg",
+    alt: "DawaLens search screen with suggested medicines",
+    tilt: 0,
+    scale: 1,
+    offsetY: 0,
+    priority: true,
+  },
+  {
+    label: "Understand",
+    urdu: "آگاہی",
+    fig: "C",
+    src: "/assets/screen-details.jpeg",
+    alt: "DawaLens medicine detail screen with safety alert",
+    tilt: 4,
+    scale: 0.88,
+    offsetY: 32,
+    priority: false,
+  },
 ];
 
 export function AppShowcase() {
@@ -59,7 +89,7 @@ export function AppShowcase() {
           <Reveal delay={0.15}>
             <p className="max-w-[38ch] text-[color:var(--color-slate)] leading-[1.55]">
               Every layout, every warning card, every bilingual label &mdash; rendered exactly the way
-              your phone will render it on the beta.
+              your phone will render it on launch day.
             </p>
           </Reveal>
         </div>
@@ -77,15 +107,24 @@ export function AppShowcase() {
                 delay: reduced ? 0 : 0.15 + i * 0.12,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="w-full max-w-[280px]"
+              className="w-full max-w-[300px]"
               style={{ marginTop: reduced ? 0 : p.offsetY }}
             >
               <PhoneFrame tilt={reduced ? 0 : p.tilt} scale={p.scale}>
-                <p.Screen />
+                <div className="absolute inset-0">
+                  <Image
+                    src={p.src}
+                    alt={p.alt}
+                    fill
+                    sizes="(max-width: 768px) 80vw, 300px"
+                    className="object-cover object-top"
+                    priority={p.priority}
+                  />
+                </div>
               </PhoneFrame>
 
               <div className="mt-8 text-center">
-                <div className="text-[10px] tracking-[0.28em] uppercase text-[color:var(--color-accent)] mb-1">
+                <div className="text-[10px] tracking-[0.28em] uppercase text-[color:var(--color-primary)] mb-1">
                   Fig. {p.fig}
                 </div>
                 <div

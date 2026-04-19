@@ -1,14 +1,17 @@
 import { Nav } from "@/components/ui/Nav";
 import { Hero } from "@/app/sections/Hero";
 import { TrustStrip } from "@/app/sections/TrustStrip";
-import { HowItWorks } from "@/app/sections/HowItWorks";
-import { InTheHand } from "@/app/sections/InTheHand";
-import { SafetyFirst } from "@/app/sections/SafetyFirst";
-import { BilingualShowcase } from "@/app/sections/BilingualShowcase";
 import { AppShowcase } from "@/app/sections/AppShowcase";
-import { FeatureGrid } from "@/app/sections/FeatureGrid";
-import { Testimonials } from "@/app/sections/Testimonials";
-import { CTAFooter } from "@/app/sections/CTAFooter";
+import { Waitlist } from "@/app/sections/Waitlist";
+import { SiteFooter } from "@/app/sections/CTAFooter";
+
+// Unused sections kept for future re-enable:
+// import { Features } from "@/app/sections/Features";
+// import { InTheHand } from "@/app/sections/InTheHand";
+// import { HowItWorks } from "@/app/sections/HowItWorks";
+// import { SafetyFirst } from "@/app/sections/SafetyFirst";
+// import { Testimonials } from "@/app/sections/Testimonials";
+// import { BilingualShowcase } from "@/app/sections/BilingualShowcase";
 
 export default function Page() {
   return (
@@ -20,14 +23,10 @@ export default function Page() {
         <Hero />
         <TrustStrip />
         <AppShowcase />
-        {/* <HowItWorks /> */}
-        {/* <InTheHand /> */}
-        {/* <SafetyFirst /> */}
-        {/* <BilingualShowcase /> */}
-        {/* <FeatureGrid /> */}
-        {/* <Testimonials /> */}
-        <CTAFooter />
+        {/* <Features /> */}
+        <Waitlist />
       </main>
+      <SiteFooter />
     </>
   );
 }
