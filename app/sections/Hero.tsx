@@ -60,14 +60,14 @@ export function Hero() {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1400px] px-8 md:px-14 grid grid-cols-12 gap-6 items-center">
-        <div className="col-span-12 md:col-span-7 relative z-10">
+      <div className="relative mx-auto max-w-[1400px] px-6 sm:px-8 md:px-14 grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-6 items-center">
+        <div className="md:col-span-7 relative z-10">
           {/* Kicker */}
           <motion.div
             initial={{ opacity: 0, y: reduced ? 0 : 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reduced ? 0.1 : 0.6, delay: reduced ? 0 : 0.1 }}
-            className="flex items-center gap-4 mb-8 text-[11px] tracking-[0.24em] uppercase text-[color:var(--color-primary)]/80"
+            className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8 text-[11px] tracking-[0.24em] uppercase text-[color:var(--color-primary)]/80"
           >
             <span className="editorial-rule" />
             <span>A pharmacy in your pocket</span>
@@ -75,8 +75,9 @@ export function Hero() {
           </motion.div>
 
           {/* Headline — cycles between English and Urdu. A min-height holds the
-              column stable while the script swaps. */}
-          <div className="relative min-h-[14em] md:min-h-[11em]">
+              column stable while the script swaps. Tighter on mobile so the
+              English variant doesn't leave a large gap below itself. */}
+          <div className="relative min-h-[7.5em] md:min-h-[11em]">
             <AnimatePresence mode="wait" initial={false}>
               {lang === "en" ? (
                 <motion.h1
@@ -123,7 +124,7 @@ export function Hero() {
           </div>
 
           {/* Paragraph — cycles with the headline. */}
-          <div className="relative mt-10 min-h-[7.5em] md:min-h-[6.5em]">
+          <div className="relative mt-5 md:mt-10 min-h-[5em] md:min-h-[6.5em]">
             <AnimatePresence mode="wait" initial={false}>
               {lang === "en" ? (
                 <motion.p
@@ -190,7 +191,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: reduced ? 1 : 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: reduced ? 0.1 : 1.0, delay: reduced ? 0 : 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="col-span-12 md:col-span-5 relative z-0 md:-mt-10"
+          className="md:col-span-5 relative z-0 md:-mt-10"
         >
           <div className="relative aspect-square w-full max-w-[560px] mx-auto">
             <PillScan />
@@ -199,7 +200,7 @@ export function Hero() {
       </div>
 
       {/* Bottom editorial strip */}
-      <div className="relative mx-auto max-w-[1400px] px-8 md:px-14 mt-20 md:mt-32 pb-10 flex items-end justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--color-slate)]">
+      <div className="relative mx-auto max-w-[1400px] px-6 sm:px-8 md:px-14 mt-20 md:mt-32 pb-10 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-[color:var(--color-slate)]">
         <span>
           01 &nbsp;&mdash;&nbsp; Introducing DawaLens
         </span>
