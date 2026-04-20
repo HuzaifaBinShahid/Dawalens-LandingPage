@@ -68,7 +68,7 @@ export function AppShowcase() {
         </span>
       </div>
 
-      <div className="relative mx-auto max-w-[1400px] px-8 md:px-14">
+      <div className="relative mx-auto max-w-[1400px] px-6 sm:px-8 md:px-14">
         <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <Reveal>
             <div className="flex items-center gap-4 mb-6 text-[11px] tracking-[0.24em] uppercase text-[color:var(--color-slate)]">

@@ -68,10 +68,10 @@ export function Waitlist() {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1300px] px-8 md:px-14 grid grid-cols-12 gap-10 items-start">
-        <div className="col-span-12 lg:col-span-6">
+      <div className="relative mx-auto max-w-[1300px] px-6 sm:px-8 md:px-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="lg:col-span-6">
           <Reveal>
-            <div className="flex items-center gap-4 mb-6 text-[11px] tracking-[0.24em] uppercase text-[color:var(--color-accent)]">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-[11px] tracking-[0.24em] uppercase text-[color:var(--color-accent)]">
               <span className="editorial-rule" />
               <span>Join the waitlist</span>
               <NastaliqMark text="فہرست" className="text-base opacity-80" />
@@ -97,8 +97,8 @@ export function Waitlist() {
           </Reveal>
         </div>
 
-        <Reveal direction="right" delay={0.2} className="col-span-12 lg:col-span-6">
-          <div className="relative bg-[color:var(--color-paper)] text-[color:var(--color-ink)] p-8 md:p-10">
+        <Reveal direction="right" delay={0.2} className="lg:col-span-6">
+          <div className="relative bg-[color:var(--color-paper)] text-[color:var(--color-ink)] p-6 sm:p-8 md:p-10">
             <span
               aria-hidden
               className="absolute -top-3 -left-3 text-[11px] tracking-[0.24em] uppercase bg-[color:var(--color-accent)] text-[color:var(--color-ink)] px-3 py-1.5"
@@ -166,12 +166,12 @@ export function Waitlist() {
             )}
 
             {IS_PLACEHOLDER && status !== "success" && (
-              <p className="mt-6 pt-6 border-t border-[color:var(--color-bone-deep)] text-[10px] tracking-[0.14em] text-[color:var(--color-slate)] leading-relaxed">
+              <p className="mt-6 pt-6 border-t border-[color:var(--color-bone-deep)] text-[10px] tracking-[0.14em] text-[color:var(--color-slate)] leading-relaxed break-words">
                 <strong className="text-[color:var(--color-accent)] uppercase tracking-[0.22em]">
                   Dev note &middot;
                 </strong>{" "}
-                Set <code className="font-mono">FORMSPREE_ENDPOINT</code> in{" "}
-                <code className="font-mono">app/sections/Waitlist.tsx</code> to activate
+                Set <code className="font-mono break-all">FORMSPREE_ENDPOINT</code> in{" "}
+                <code className="font-mono break-all">app/sections/Waitlist.tsx</code> to activate
                 submissions.
               </p>
             )}

@@ -5,7 +5,7 @@ export function Nav() {
   return (
     <nav
       aria-label="Primary"
-      className="absolute top-0 left-0 right-0 z-50 px-8 md:px-14 py-7 flex items-center justify-between text-[color:var(--color-primary)]"
+      className="absolute top-0 left-0 right-0 z-50 px-6 sm:px-8 md:px-14 py-7 flex items-center justify-between text-[color:var(--color-primary)]"
     >
       <Link href="/" className="flex items-baseline gap-2 group">
         <span

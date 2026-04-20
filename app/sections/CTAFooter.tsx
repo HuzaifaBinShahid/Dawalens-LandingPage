@@ -22,10 +22,10 @@ import { Mail, Github } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="relative bg-[color:var(--color-ink)] text-[color:var(--color-paper)]/60 border-t border-[color:var(--color-paper)]/10 px-8 md:px-14 py-14">
-      <div className="mx-auto max-w-[1400px] grid grid-cols-12 gap-10 items-start">
+    <footer className="relative bg-[color:var(--color-ink)] text-[color:var(--color-paper)]/60 border-t border-[color:var(--color-paper)]/10 px-6 sm:px-8 md:px-14 py-14">
+      <div className="mx-auto max-w-[1400px] grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
         {/* Brand block — takes more of the row now that link columns are lean. */}
-        <div className="col-span-12 md:col-span-7">
+        <div className="md:col-span-7">
           <div className="flex items-baseline gap-3">
             <span
               className="text-2xl tracking-tight text-[color:var(--color-paper)]"
@@ -45,7 +45,7 @@ export function SiteFooter() {
             plus the two contact routes worth surfacing. */}
         <nav
           aria-label="Footer"
-          className="col-span-12 md:col-span-4 md:col-start-9 text-[11px] tracking-[0.22em] uppercase"
+          className="md:col-span-4 md:col-start-9 text-[11px] tracking-[0.22em] uppercase"
         >
           <div className="text-[color:var(--color-paper)]/40 mb-4">Elsewhere</div>
           <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
@@ -81,7 +81,7 @@ export function SiteFooter() {
         </nav>
       </div>
 
-      <div className="mx-auto max-w-[1400px] mt-14 pt-8 border-t border-[color:var(--color-paper)]/10 flex flex-col md:flex-row gap-4 md:justify-between text-[11px] tracking-[0.22em] uppercase text-[color:var(--color-paper)]/40">
+      <div className="mx-auto max-w-[1400px] mt-14 pt-8 border-t border-[color:var(--color-paper)]/10 flex flex-col md:flex-row gap-4 md:justify-between text-[10px] sm:text-[11px] tracking-[0.22em] uppercase text-[color:var(--color-paper)]/40">
         <span>&copy; {new Date().getFullYear()} DawaLens. All rights reserved.</span>
         <span className="normal-case tracking-normal">
           Informational only. Always consult a licensed clinician or pharmacist before acting on scan results.
