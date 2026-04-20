@@ -110,7 +110,7 @@ body {
 }
 
 .marquee-track {
-  animation: marquee-x 40s linear infinite;
+  animation: marquee-x 10s linear infinite;
   will-change: transform;
 }
 
